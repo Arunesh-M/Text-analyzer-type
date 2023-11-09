@@ -7,26 +7,26 @@ interface DataContextProviderProps {
 
 interface DataState {
   text: string;
-  words: number | undefined;
-  characters: number | undefined;
+  words: number ;
+  characters: number ;
   pro: number;
   para: number;
   sent: number;
-  read: string | undefined | number;
-  long: string | undefined;
+  read: string  | number;
+  long: string ;
 }
 
 interface DataContextProps {
-  words: number | undefined;
-  characters: number | undefined;
+  words: number ;
+  characters: number ;
   pro: number;
   para: number;
   sent: number;
   text: string;
   state: DataState;
   setState: React.Dispatch<React.SetStateAction<DataState>>;
-  read: string | undefined | number;
-  long: string | undefined;
+  read: string | number;
+  long: string ;
 }
 
 export const DataContext = createContext<DataContextProps>({} as DataContextProps);
