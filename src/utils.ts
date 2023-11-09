@@ -1,14 +1,24 @@
-export const countChar = (text: string): number | undefined  => {
+export const countChar = (text: string): number   => {
     if (text.length > 0) {
         let count = text.replace(/\s/g, "");
         return count.length;
     }
+
+    else{
+        let count=0
+        return count
+    }
 };
 
-export const countWord = (text: string): number | undefined  => {
+export const countWord = (text: string): number   => {
     if (text.length > 0) {
         let count = text.split(/\s+/);
         return count.length - 1;
+    }
+
+    else{
+        let count=0
+        return count
     }
 };
 
@@ -18,7 +28,7 @@ export const countPro = (text: string): number   => {
     return split.map((item) => item.toLowerCase()).filter((item) => pronouns.includes(item)).length;
 };
 
-export const countRead = (text: string): number | undefined  => {
+export const countRead = (text: string): number   => {
     if (text.length > 0) {
         let length = text.length;
         let counter = 0;
@@ -29,9 +39,14 @@ export const countRead = (text: string): number | undefined  => {
         }
         return counter;
     }
+
+    else{
+        let num = 0;
+        return num;
+    }
 };
 
-export const longWord = (text: string): string | undefined => {
+export const longWord = (text: string): string  => {
     if (text.length > 0) {
         let replace1 = text.replace(/\./, " ");
         let replace2 = replace1.replace(/\?/, " ");
@@ -41,6 +56,11 @@ export const longWord = (text: string): string | undefined => {
         let replace6 = replace5.replace(/!/, " ");
         let split = replace6.split(/\s+/).sort((a, b) => b.length - a.length);
         return split[0];
+    }
+
+    else{
+            let str="-"
+            return str
     }
 };
 
@@ -54,4 +74,3 @@ export const countSent=(text: string): number =>{
     let count=result.filter((item)=>item!=="");
     return count.length
 }
-
